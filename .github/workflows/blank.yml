@@ -28,4 +28,8 @@ jobs:
         run: |
           chmod +x ./.github/workflows/scripts/export_ipa.sh
           ./.github/workflows/scripts/export_ipa.sh
+      - name:  gem install deploygate
+        run: |
+          gem install deploygate
+          dg deploy AIO.ipa/AIO.ipa
 

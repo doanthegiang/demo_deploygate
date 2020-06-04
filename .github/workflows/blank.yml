@@ -13,9 +13,8 @@ on:
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   # This workflow contains a single job called "build"
-  build:https://github.com/doanthegiang/demo_deploygate
-    # The type of runner that the job will run on
-    runs-on: macOS-latest
+  # build:https://github.com/doanthegiang/demo_deploygate
+    runs-on: runs-on: macOS-latest
     strategy:
         matrix:
           destination: ['platform=iOS Simulator,OS=12.2,name=iPhone X', 'platform=tvOS Simulator,OS=12.2,name=Apple TV 4K']

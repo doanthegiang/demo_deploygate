@@ -5,7 +5,7 @@ on:
       - master
 jobs:
   deploy:
-    name: Deploying 
+    name: Deploy
     runs-on: macOS-latest
     steps:
       - name: Checkout repository

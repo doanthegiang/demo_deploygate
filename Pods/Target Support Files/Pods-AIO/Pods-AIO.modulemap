@@ -1,0 +1,6 @@
+framework module Pods_AIO {
+  umbrella header "Pods-AIO-umbrella.h"
+
+  export *
+  module * { export * }
+}

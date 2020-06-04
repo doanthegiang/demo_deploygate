@@ -1,7 +1,7 @@
 set -eo pipefail
 
 xcodebuild -workspace AIO.xcworkspace \
-            -scheme AIO\ iOS \
+            -scheme AIO \
             -sdk iphoneos \
             -configuration AppStoreDistribution \
             -archivePath $PWD/build/AIO.xcarchive \

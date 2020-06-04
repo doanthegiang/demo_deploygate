@@ -14,7 +14,7 @@ on:
 jobs:
   # This workflow contains a single job called "build"
   # build:https://github.com/doanthegiang/demo_deploygate
-    runs-on: runs-on: macOS-latest
+    runs-on:  macOS-latest
     strategy:
         matrix:
           destination: ['platform=iOS Simulator,OS=12.2,name=iPhone X', 'platform=tvOS Simulator,OS=12.2,name=Apple TV 4K']

@@ -31,5 +31,5 @@ jobs:
       - name:  gem install deploygate
         run: |
           gem install deploygate
-          dg deploy AIO.ipa/AIO.ipa
+          dg deploy AIO.ipa/AIO.ipa --email="giangdoanthe@gmail.com"
 

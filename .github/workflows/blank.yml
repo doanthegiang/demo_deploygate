@@ -1,11 +1,11 @@
-name: Deploy
+name: Deploying
 on:
   push:
     branches:
       - master
 jobs:
   deploy:
-    name: Deploy
+    name: Deploying
     runs-on: macOS-latest
     steps:
       - name: Checkout repository

@@ -6,7 +6,7 @@ chmod +x ./.github/workflows/secrets/Certificates.p12.gpg
 
 
 gpg --quiet --batch --yes --decrypt --passphrase="$IOS_KEYS" --output  ./.github/workflows/secrets/a842f066-55fa-4359-ab09-ddd4cc0aa829.mobileprovision  ./.github/workflows/secrets/a842f066-55fa-4359-ab09-ddd4cc0aa829.mobileprovision.gpg
-gpg --quiet --batch --yes --decrypt --passphrase="$IOS_KEYS" --output  ./.github/workflows/secrets/Certificates.p12 /secrets/Certificates.p12.gpg
+gpg --quiet --batch --yes --decrypt --passphrase="$IOS_KEYS" --output  ./.github/workflows/secrets/Certificates.p12  ./.github/workflows/secrets/Certificates.p12.gpg
 
 mkdir -p ~/Library/MobileDevice/Provisioning\ Profiles
 

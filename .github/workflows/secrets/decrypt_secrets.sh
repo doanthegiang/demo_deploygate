@@ -13,7 +13,7 @@ cp ./.github/workflows/secrets/a842f066-55fa-4359-ab09-ddd4cc0aa829.mobileprovis
 
 
 security create-keychain -p "" build.keychain
-security import ./.github/workflows/secrets/Certificates.p12 -t agg -k ~/Library/Keychains/build.keychain -P "" -A
+security import ./.github/workflows/secrets/Certificates.p12 -t agg -k ~/Library/Keychains/build.keychain -P "$IOS_KEYS" -A
 security list-keychains -s ~/Library/Keychains/build.keychain
 security default-keychain -s ~/Library/Keychains/build.keychain
 security unlock-keychain -p "" ~/Library/Keychains/build.keychain

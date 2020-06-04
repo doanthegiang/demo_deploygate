@@ -15,11 +15,17 @@ jobs:
       - name: Setup provisioning profile
         env:
           IOS_KEYS: ${{ secrets.IOS_KEYS }}
-        run: sudo ./.github/workflows/secrets/decrypt_secrets.sh
+        run: |
+          chmod +x ./.github/workflows/secrets/decrypt_secrets.sh
+          ./.github/workflows/secrets/decrypt_secrets.sh
       - name: Archiving project
         env:
           PR_NUMBER: $(jq --raw-output .pull_request.number "$GITHUB_EVENT_PATH")
-        run: sudo ./.github/workflows/scripts/archive_app.sh
+        run: |
+          chmod +x ./.github/workflows/scripts/archive_app.sh
+          ./.github/workflows/scripts/archive_app.sh
       - name: Exporting .ipa
-        run: sudo ./.github/workflows/scripts/export_ipa.sh
+        run: |
+          chmod +x ./.github/workflows/scripts/export_ipa.sh
+          ./.github/workflows/scripts/export_ipa.sh
 

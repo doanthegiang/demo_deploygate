@@ -30,6 +30,7 @@ jobs:
       run: |
         gem install deploygate
         dg deploy AIO.xcworkspace
+        echo 'giangdoanthe@gmail.com'
       env:
         destination: ${{ matrix.destination }}
 

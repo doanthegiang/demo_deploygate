@@ -18,7 +18,7 @@ jobs:
     runs-on: macOS-latest
     strategy:
         matrix:
-          destination: ['platform=iOS Simulator,OS=12.2,name=iPhone X']
+          destination: ['platform=iOS Simulator, name=iPhone']
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:

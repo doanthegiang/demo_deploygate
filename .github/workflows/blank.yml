@@ -28,8 +28,8 @@ jobs:
     # Runs a set of commands using the runners shell
     - name: Run a multi-line script
       run: |
-          xcodebuild clean build -verbose -workspace AIO.xcworkspace -scheme AIO -destination "${destination}"  ONLY_ACTIVE_ARCH=YES
-          bash <(curl -s https://codecov.io/bash)
+        xcodebuild -verbose -workspace AIO.xcworkspace -scheme AIO -destination="platform=iOS Simulator,name=iPhone" -configuration Debug  -sdk iphonesimulator ONLY_ACTIVE_ARCH=YES clean build          
+        bash <(curl -s https://codecov.io/bash)
       env:
         destination: ${{ matrix.destination }}
 

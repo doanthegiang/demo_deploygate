@@ -15,18 +15,24 @@ jobs:
   # This workflow contains a single job called "build"
   build:https://github.com/doanthegiang/demo_deploygate
     # The type of runner that the job will run on
-    runs-on: macos-latest
-
+    runs-on: macOS-latest
+    strategy:
+        matrix:
+          destination: ['platform=iOS Simulator,OS=12.2,name=iPhone X', 'platform=tvOS Simulator,OS=12.2,name=Apple TV 4K']
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
     # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
     - uses: actions/checkout@master
 
     # Runs a single command using the runners shell
-    - name: Run pod
-      run: |
-        xcode-select --install
-        sudo xcode-select -s /Applications/Xcode.app/Contents/Developer
-        sudo xcodebuild -license
-        pod install
+   - name: Checkout
+        uses: actions/checkout@master
+      - name: Build and test
+        run: |
+          cd AIO
+          pod install
+          xcodebuild clean test -project AIO.xcodeproj -scheme AIO -destination "${destination}" CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO ONLY_ACTIVE_ARCH=NO
+          bash <(curl -s https://codecov.io/bash)
+        env: 
+         destination: ${{ matrix.destination }}
 
